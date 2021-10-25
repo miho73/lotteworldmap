@@ -1,0 +1,27 @@
+{
+  "name": "lotteworld",
+  "version": "1.0.0",
+  "description": "Map for LotteWorld",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miho73/lotteworldmap.git"
+  },
+  "keywords": [
+    "map"
+  ],
+  "author": "miho73",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miho73/lotteworldmap/issues"
+  },
+  "homepage": "https://github.com/miho73/lotteworldmap#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0"
+  }
+}

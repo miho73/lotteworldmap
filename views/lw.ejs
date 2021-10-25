@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>롯데월드 길찾기</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="/lib/lw.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <img src="/lib/map/1.png" id="lw-map" alt="롯데월드 지도">
+        <svg id="lw-nav" onclick="report(event)">
+            <path id="lw-path" fill="transparent" stroke="#661AF0" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+        <div id="lw-control">
+            <p id="log">Showing all</p>
+            <button onclick="loadWPS()">Load waypoints</button>
+            <button onclick="renderWPS()">Repaint waypoints</button>
+            <button onclick="mark(prompt('code of waypoint'))">From waypoint</button>
+            <fieldset>
+                <label>링크 업데이트</label>
+                <input type="number" id="lw-new-lnk-for" placeholder="Waypoint 코드">
+                <input type="text" id="lw-new-lnk" placeholder="새 링크">
+                <button onclick="updateLnk()">업데이트</button>
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" id="locate">
+                <label for="locate">Find nearest waypoint</label>
+                <input type="checkbox" id="mark" onchange="renderWPS()">
+                <label for="mark">Mark waypoints</label>
+            </fieldset>
+            <fieldset>
+                <input type="number" id="from" placeholder="Departure">
+                <input type="number" id="to" placeholder="Arrival">
+                <button onclick="pathfind()">Dijkstra</button>
+            </fieldset>
+            <button onclick="confLnkErr()">Check link error</button>
+            <button onclick="expo()">Copy Waypoint JSON</button>
+            <textarea id="console" readonly></textarea>
+        </div>
+    </body>
+    <script src="/lib/script.js"></script>
+</html>
